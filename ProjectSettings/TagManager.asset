@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - HotArea
+  - Item
+  - Tool
   layers:
   - Default
   - TransparentFX
