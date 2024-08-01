@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IEnemy
 {
-    void TakeDamage(int amount);
+    void TakeDamage(float damage, float penetration);
 }

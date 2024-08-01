@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class activateGrab : MonoBehaviour
 {
     bool isActivated = false;
+    private Collider attachedItem = null;
 
     public void activate()
     {
@@ -14,16 +16,19 @@ public class activateGrab : MonoBehaviour
     public void deactivate()
     {
         isActivated = false;
-        gameObject.transform.SetParent(null);
-     }
+        attachedItem.gameObject.transform.SetParent(null);
+        attachedItem.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        attachedItem = null;
+    }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerStay(Collider collider)
     {
-        if (isActivated && collision.gameObject.tag == "Item")
+        if (isActivated && collider.gameObject.tag == "Item" && attachedItem == null)
         {
-            collision.gameObject.transform.SetParent(gameObject.transform);
+            attachedItem = collider;
+            collider.gameObject.transform.SetParent(gameObject.transform);
+            collider.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         }
-
 
     }
 

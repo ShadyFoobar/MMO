@@ -8,6 +8,10 @@ TagManager:
   - HotArea
   - Item
   - Tool
+  - Hammer
+  - AnvilArea
+  - InventoryObject
+  - NPC
   layers:
   - Default
   - TransparentFX

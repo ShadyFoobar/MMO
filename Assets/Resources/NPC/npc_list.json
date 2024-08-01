@@ -1,0 +1,9 @@
+{
+    "npc_list": [
+        {
+            "id": 1,
+            "name": "Jim the Merchant",
+            "main_text": "THis is the body on the main text"
+        }
+    ]
+}

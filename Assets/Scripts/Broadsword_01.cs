@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Broadsword_01 : MonoBehaviour
 {
+
+    private float damage = 5.0f;
+    private float penetration = 0.0f;
+
     private void OnTriggerEnter(Collider col)
     {
         if(col.tag == "Enemy")
         {
-            //TODO GO OVER TUTORIAL FOR SETTING UP BASE STATS AND STUFF
-            col.GetComponent<IEnemy>().TakeDamage(10);
+            col.GetComponent<IEnemy>().TakeDamage(damage, penetration);
         }
     }
 }
