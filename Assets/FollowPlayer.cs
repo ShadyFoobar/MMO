@@ -2,22 +2,26 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    public float distanceFromPlayer = .2f;
     public Transform playerTransform; // Assign the player in the Inspector
-    public Vector3 offset = Vector3.zero; // Offset from the player position
+    public float offsetUp = 0f; // Offset from the player position
+    public float offsetForward = 0f; // Offset from the player position
+    public float offsetRight = 0f; // Offset from the player position
+
 
     void Update()
     {
         if (playerTransform != null)
         {
-            // Calculate the new position in front of the player
-            Vector3 newPosition = playerTransform.position + playerTransform.forward * distanceFromPlayer + new Vector3(0f,.5f, 0f);
+            // Calculate the offset using player's local directions
+            Vector3 offset = playerTransform.right * offsetRight
+                           + playerTransform.up * offsetUp
+                           + playerTransform.forward * offsetForward;
 
-            // Set the position of the GameObject
-            transform.position = newPosition;
+            transform.position = playerTransform.position + offset;
 
-            // Optional: Rotate the GameObject to face the same direction as the player
+            // Optional: Match rotation
             transform.rotation = playerTransform.rotation;
         }
     }
+
 }

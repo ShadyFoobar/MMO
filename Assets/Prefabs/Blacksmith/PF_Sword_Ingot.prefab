@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5368629052899476290
+--- !u!1 &6042720612192840384
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6273724863461104125}
-  - component: {fileID: 5980177976463156577}
-  - component: {fileID: 4507271990761324707}
-  - component: {fileID: 523876902644664992}
-  - component: {fileID: 2254112287311892909}
-  - component: {fileID: 2751397694656807262}
-  - component: {fileID: 7530907818026141565}
+  - component: {fileID: 2570151388269818607}
+  - component: {fileID: 4021744228192001601}
+  - component: {fileID: 4149141937186549900}
+  - component: {fileID: 8039400441070032190}
+  - component: {fileID: 6135401227986805392}
+  - component: {fileID: 2221757269604041334}
+  - component: {fileID: 6929247007002770759}
   m_Layer: 0
-  m_Name: SM_Item_Bottle_01
+  m_Name: PF_Sword_Ingot
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6273724863461104125
+--- !u!4 &2570151388269818607
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5368629052899476290}
+  m_GameObject: {fileID: 6042720612192840384}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.31561458, y: 0.918, z: -2.7254758}
+  m_LocalPosition: {x: -2.507, y: 0.935, z: 0.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5980177976463156577
+--- !u!33 &4021744228192001601
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5368629052899476290}
-  m_Mesh: {fileID: 4300000, guid: 21a2fed7bc220c54babfd8abd1b81fc8, type: 3}
---- !u!23 &4507271990761324707
+  m_GameObject: {fileID: 6042720612192840384}
+  m_Mesh: {fileID: 4300000, guid: 379824de85a42e84b9dad8af5d51660b, type: 3}
+--- !u!23 &4149141937186549900
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5368629052899476290}
+  m_GameObject: {fileID: 6042720612192840384}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -77,7 +77,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
+  m_StitchLightmapSeams: 1
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -87,13 +87,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &523876902644664992
+--- !u!64 &8039400441070032190
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042720612192840384}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 43080154164514564, guid: 5d341af65a1043e42a64f5da7153b58d, type: 2}
+--- !u!54 &6135401227986805392
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5368629052899476290}
+  m_GameObject: {fileID: 6042720612192840384}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -114,35 +136,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &2254112287311892909
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5368629052899476290}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 21a2fed7bc220c54babfd8abd1b81fc8, type: 3}
---- !u!114 &2751397694656807262
+--- !u!114 &2221757269604041334
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5368629052899476290}
+  m_GameObject: {fileID: 6042720612192840384}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
@@ -288,28 +288,23 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &7530907818026141565
+--- !u!114 &6929247007002770759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5368629052899476290}
+  m_GameObject: {fileID: 6042720612192840384}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2616909254174814898d9c493a6f0779, type: 3}
+  m_Script: {fileID: 11500000, guid: af8ebcb3babe16942948decee9201bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
-  itemIcon: {fileID: 21300000, guid: f65023889763c7644b5579f0b019da6b, type: 3}
-  itemName: Green Pot
-  prefabName: SM_Item_Bottle_01
-  prefabPath: Assets/Prefabs/Items/Potions/
-  leftSelect: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f,
-    type: 3}
-  rightSelect: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f,
-    type: 3}
-  leftActivate: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f,
-    type: 3}
-  rightActivate: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f,
-    type: 3}
+  material:
+  - {fileID: 2100000, guid: 71e41e43b459a244abaf5acca76b89ee, type: 2}
+  - {fileID: 2100000, guid: 46353c1ba6e6ba14eb8b10abf600d48d, type: 2}
+  - {fileID: 2100000, guid: 834336b3368e9304abaa8274276451c9, type: 2}
+  - {fileID: 2100000, guid: 4a46c1ab953054e40bac987851810924, type: 2}
+  weapon: {fileID: 0}
+  heatInterval: 5
+  coolInterval: 5

@@ -4,15 +4,21 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventorySystem : MonoBehaviour
+public class CastorInventorySystem : MonoBehaviour
 {
     public GameObject canvasToToggle; // Assign the Canvas in the Inspector
     public GameObject itemSlotPrefab; // Prefab for the item slot
     public Transform itemSlotParent; // Parent object to hold item slots
 
+    public GameObject scrollSlotPrefab; // Parent object to hold item slots
+
+
+
     public int maxNumberOfItems = 1;
 
     private List<ItemDetails> inventory = new List<ItemDetails>(); // List to store inventory items
+    public ItemDetails schema; // schema for creation
+
 
     void Start()
     {
@@ -22,9 +28,26 @@ public class InventorySystem : MonoBehaviour
         UpdateInventoryUI();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            canvasToToggle.SetActive(!canvasToToggle.activeSelf);
+            //Debug.Log("Toggled: " + canvasToToggle.activeSelf);
+        }
+    }
+
     public bool AddItem(ItemDetails details)
     {
-        if (inventory.Count < maxNumberOfItems)
+
+        if(details.itemType == "Scroll")
+        {
+            schema = details;
+            UpdateScrollSlot();
+            return true;
+
+        } 
+        else if (inventory.Count < maxNumberOfItems)
         {
             inventory.Add(details);
             UpdateInventoryUI();
@@ -75,19 +98,23 @@ public class InventorySystem : MonoBehaviour
         }
     }
 
+    void UpdateScrollSlot()
+    {
+
+        scrollSlotPrefab.GetComponent<Image>().sprite = schema.itemIcon;
+
+
+    }
+
     public void OpenInventory()
     {
         if (canvasToToggle != null)
         {
-            Debug.Log("opening canvas");
-            bool isActive = canvasToToggle.activeSelf;
-            Debug.Log(isActive);
-
-            canvasToToggle.SetActive(!isActive);
-            Debug.Log("opening canvas 22222");
-
+            Debug.Log("Toggled: " + canvasToToggle.activeSelf);
+            canvasToToggle.SetActive(!canvasToToggle.activeSelf);
         }
     }
+
 }
 
 

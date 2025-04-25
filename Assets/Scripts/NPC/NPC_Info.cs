@@ -7,12 +7,19 @@ using UnityEngine.UI;
 public class NPC_Info : MonoBehaviour
 {
     public string Name;
-    public string Description;
+    public string MainTextDescription;
     public string NPC_Id;
+    public Type type;
     public Canvas infoCanvas;
     public Canvas mainCanvas;
     public Canvas storeCanvas;
 
+    public enum Type
+    {
+        Normal,
+        Merchant,
+        Blacksmith,
+    }
     private void Start()
     {
         // function of getting all npc information based on the NPC_ID
@@ -24,5 +31,4 @@ public class NPC_Info : MonoBehaviour
         infoCanvas.GetComponentInChildren<TMP_Text>().text = Name;
 
     }
-
 }

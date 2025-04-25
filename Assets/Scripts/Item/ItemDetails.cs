@@ -1,40 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
+
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Windows;
+
 
 public class ItemDetails : MonoBehaviour
 {
     [SerializeField] public GameObject item;
 
+
     [SerializeField] public Sprite itemIcon;
     [SerializeField] public string itemName;
     [SerializeField] public string prefabName;
     [SerializeField] public string prefabPath;
-    [SerializeField] private InputActionReference grip;
+    [SerializeField] public string itemType;
+
+    [SerializeField] private InputActionReference leftSelect;
+    [SerializeField] private InputActionReference rightSelect;
+    [SerializeField] private InputActionReference leftActivate;
+    [SerializeField] private InputActionReference rightActivate;
 
 
     void Start()
     {
         item = gameObject;
-    }
-
-    private void Update()
-    {
 
     }
+
     private void OnTriggerStay(Collider collider)
     {
-        Debug.Log("Is grip pressed");
-        Debug.Log(grip.action.IsPressed());
         // Check Grip Released
-        if(collider.gameObject.tag == "InventoryObject" && !grip.action.IsPressed())
+
+        if (collider.gameObject.tag == "InventoryObject" 
+            && (leftSelect.action.IsPressed() || rightSelect.action.IsPressed())
+            && (leftActivate.action.IsPressed() || rightActivate.action.IsPressed()))
         {
             Debug.Log("Found Inventory object");
-            collider.gameObject.GetComponent<InventorySystem>().AddItem(this);            
-            item.SetActive(false);
-            Debug.Log("Destroy item");
+            bool hasAdded = collider.gameObject.GetComponent<CastorInventorySystem>().AddItem(this);
+            Debug.Log(hasAdded + " added");
+            if (hasAdded)
+            {
+                item.SetActive(false);
+            }
         }
     }
 
